@@ -87,7 +87,7 @@ img {
   object-fit: cover;
 }
 
-.footer .footer-wrapper .footer-nav .nav-links, .testimonials-article .testimonials-text, .testimonials-article, .header .menu-links a, .header .header-nav, .header .menu-links {
+.footer .footer-wrapper .footer-nav .nav-links, .testimonials-article .testimonials-text, .testimonials-article, .header .side-menu-links a, .header .menu-links a, .header .header-nav, .header .menu-links, .header .side-menu-links {
   display: flex;
   flex-wrap: wrap;
 }
@@ -188,7 +188,7 @@ body {
 .header {
   padding: 2.7rem 0;
 }
-.header .header-nav, .header .menu-links {
+.header .header-nav, .header .menu-links, .header .side-menu-links {
   justify-content: space-between;
   align-items: center;
 }
@@ -198,9 +198,20 @@ body {
 }
 .header .logo h1 {
   font-family: "Montserrat", serif;
-  color: #000000;
+  color: #21293f;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
 }
 .header .menu-links a {
+  justify-content: space-between;
+  color: #000000;
+  font-size: 1rem;
+  margin-left: 20px;
+  font-family: "Montserrat", serif;
+}
+.header .side-menu-links a {
   justify-content: space-between;
   color: #000000;
   font-size: 1rem;
@@ -223,11 +234,14 @@ body {
   .header .menu-links {
     display: none;
   }
+  .header .side-menu-links {
+    display: none;
+  }
   .header .ham-menu {
     display: inline-block;
     position: relative;
     z-index: 10;
-    color: #000000;
+    color: #131722;
   }
   .header #toggle {
     display: none;
@@ -270,7 +284,14 @@ body {
 @media all and (max-width: 768px) {
   .hero .hero-text h2 {
     font-size: 4rem;
+    text-align: center;
   }
+}
+.hero .hero-gallery h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 2;
+  letter-spacing: 0.12rem;
 }
 .hero .small-gallery {
   grid-template-columns: repeat(3, minmax(150px, 1fr));
@@ -535,6 +556,7 @@ body {
     display: inline-block;
     font-size: 3rem;
     z-index: 10;
+    font-weight: 700;
     cursor: pointer;
   }
   .header #toggle {

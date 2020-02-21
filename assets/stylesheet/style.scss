@@ -8,7 +8,7 @@ body {
 }
 .header {
   padding: 2.7rem 0;
-  .header-nav, .menu-links {
+  .header-nav, .menu-links, .side-menu-links {
     @extend %flex;
     justify-content: space-between;
     align-items: center;
@@ -19,9 +19,21 @@ body {
   }
   .logo h1 {
     font-family: 'Montserrat', serif;
-    color: #000000;
+    color: #21293f;
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
   }
   .menu-links a {
+    @extend %flex;
+    justify-content: space-between;
+    color: #000000;
+    font-size: 1rem;
+    margin-left: 20px;
+    font-family: 'Montserrat', serif;
+  }
+  .side-menu-links a {
     @extend %flex;
     justify-content: space-between;
     color: #000000;
@@ -46,11 +58,14 @@ body {
     .menu-links {
       display: none;
     }
+    .side-menu-links{
+      display: none;
+    }
     .ham-menu  {
       display: inline-block;
       position: relative;
       z-index: 10;
-      color: #000000;
+      color: #131722;
 
     }
     #toggle {
@@ -93,7 +108,16 @@ body {
       @media all and (max-width: 768px)
       {
         font-size: 4rem;
+        text-align: center;
       }
+    }
+  }
+  .hero-gallery{
+    h3{
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 2;
+      letter-spacing: 0.12rem;
     }
   }
   .small-gallery{
@@ -392,6 +416,7 @@ body {
       display: inline-block;
       font-size: 3rem;
       z-index: 10;
+      font-weight: 700;
       cursor: pointer;
     }
     #toggle {
