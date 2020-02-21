@@ -1,0 +1,10 @@
+%flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+%grid {
+    display: grid;
+    grid-auto-columns: 1fr;
+    
+}

@@ -1,0 +1,63 @@
+h1 {
+    font-size: 2.5rem; 
+    @media all and (max-width: 768px){
+        font-size: 3.5rem;
+    }
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+h4 {
+    font-size: 1.125rem;
+    margin-bottom: 1.25rem;
+}
+
+h5 {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+}
+h6 {
+    font-size: 0.75px;
+    margin-bottom: 1.25rem;
+}
+p {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+.btn {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.padding {
+    padding: 4rem 0;
+}
+.center {
+    text-align: center;
+
+}
+.text-center {
+    text-align: center;
+}
+.padding {
+    padding: 6rem 0;
+}
+.quote-marks {
+    font-size: 8rem;
+    
+    height: 150px;
+}
+.img-responsive {
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+}

@@ -1,0 +1,11 @@
+.container {
+    max-width: 1400px; //make it 1400 since images size is multiplier of 100
+    margin: 0 auto;
+
+    @media all and (max-width: 1024px)
+    {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+}
+
