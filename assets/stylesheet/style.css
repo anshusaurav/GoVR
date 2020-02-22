@@ -87,14 +87,13 @@ img {
   object-fit: cover;
 }
 
-.footer .footer-wrapper .footer-nav .nav-links, .testimonials-article .testimonials-text, .testimonials-article, .header .side-menu-links a, .header .menu-links a, .header .header-nav, .header .menu-links, .header .side-menu-links {
+.footer .footer-wrapper .footer-nav .nav-links, .testimonials-article .testimonials-text, .testimonials-article, .header .side-menu-links label, .header .menu-links a, .header .header-nav, .header .menu-links, .header .side-menu-links {
   display: flex;
   flex-wrap: wrap;
 }
 
-.footer .footer-wrapper, .hidden, .gallery-article, .services-text, .services-article, .hero .small-gallery .gal-item, .hero .small-gallery, .hero .hero-text {
+.footer .footer-wrapper, .hidden, .gallery-article, .services-text, .services-article, .game-demo .category-game-slider, .game-demo .featured-category, .hero .small-gallery .gal-item, .hero .small-gallery, .hero .hero-text {
   display: grid;
-  grid-auto-columns: 1fr;
 }
 
 h1 {
@@ -155,10 +154,6 @@ p {
   text-align: center;
 }
 
-.padding {
-  padding: 6rem 0;
-}
-
 .quote-marks {
   font-size: 8rem;
   height: 150px;
@@ -167,6 +162,11 @@ p {
 .img-responsive {
   width: 100%;
   height: 100%;
+  font-size: 0;
+}
+
+.img-res {
+  width: 100%;
   font-size: 0;
 }
 
@@ -186,7 +186,7 @@ body {
 }
 
 .header {
-  padding: 2.7rem 0;
+  padding: 1rem 0;
 }
 .header .header-nav, .header .menu-links, .header .side-menu-links {
   justify-content: space-between;
@@ -199,7 +199,7 @@ body {
 .header .logo h1 {
   font-family: "Montserrat", serif;
   color: #21293f;
-  background: -webkit-linear-gradient(#eee, #333);
+  background: -webkit-linear-gradient(#76b7ec, #333);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 600;
@@ -211,7 +211,7 @@ body {
   margin-left: 20px;
   font-family: "Montserrat", serif;
 }
-.header .side-menu-links a {
+.header .side-menu-links label {
   justify-content: space-between;
   color: #000000;
   font-size: 1rem;
@@ -311,6 +311,55 @@ body {
   object-fit: cover;
 }
 
+.game-demo {
+  background-color: #131722;
+}
+.game-demo .featured-category {
+  grid-gap: 2rem;
+  grid-template-columns: repeat(4, minmax(16rem, 1fr));
+}
+.game-demo .category-game-slider {
+  align-items: center;
+}
+.game-demo h4 {
+  text-align: center;
+  color: #ffffff;
+}
+.game-demo h3 {
+  color: #ffffff;
+  text-align: center;
+}
+.game-demo p {
+  color: #66696C;
+  text-align: center;
+}
+.game-demo .slider-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin-top: 1rem;
+  font-family: inherit;
+  letter-spacing: 1px;
+}
+.game-demo .slider-btn-div {
+  text-align: center;
+  align-self: start;
+}
+.game-demo .game-slider-dec-one {
+  height: 0.1rem;
+  background-image: linear-gradient(to right, #66696C 20%, #131722 80%);
+  grid-column: 1/-1;
+}
+.game-demo .game-slider-dec-two {
+  height: 0.1rem;
+  margin-top: 1rem;
+  background-image: linear-gradient(to right, #131722 20%, #66696C 80%);
+}
+
 .services-article {
   grid-column-gap: 6rem;
 }
@@ -356,8 +405,11 @@ body {
 }
 
 .btn:hover {
-  background-color: #ffffff;
-  color: #af9453;
+  color: #76b7ec;
+}
+
+.slider-btn:hover {
+  color: #76b7ec;
 }
 
 .testimonials-article {

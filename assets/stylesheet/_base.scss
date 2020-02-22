@@ -48,9 +48,7 @@ p {
 .text-center {
     text-align: center;
 }
-.padding {
-    padding: 6rem 0;
-}
+
 .quote-marks {
     font-size: 8rem;
     
@@ -59,5 +57,9 @@ p {
 .img-responsive {
     width: 100%;
     height: 100%;
+    font-size: 0;
+}
+.img-res {
+    width: 100%;
     font-size: 0;
 }

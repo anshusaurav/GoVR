@@ -7,7 +7,7 @@ body {
   font-family: 'Montserrat', serif;
 }
 .header {
-  padding: 2.7rem 0;
+  padding: 1rem 0;
   .header-nav, .menu-links, .side-menu-links {
     @extend %flex;
     justify-content: space-between;
@@ -20,9 +20,9 @@ body {
   .logo h1 {
     font-family: 'Montserrat', serif;
     color: #21293f;
-    background: -webkit-linear-gradient(#eee, #333);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: -webkit-linear-gradient(rgb(118, 183, 236), #333);  //-webkit-linear-gradient(#373C40, #131722);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
     font-weight: 600;
   }
   .menu-links a {
@@ -33,7 +33,7 @@ body {
     margin-left: 20px;
     font-family: 'Montserrat', serif;
   }
-  .side-menu-links a {
+  .side-menu-links label {
     @extend %flex;
     justify-content: space-between;
     color: #000000;
@@ -141,7 +141,57 @@ body {
     }
   }
 }
-
+.game-demo{
+  background-color: #131722;
+  .featured-category{
+    @extend %grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(4, minmax(16rem,1fr));
+  }
+  .category-game-slider {
+    @extend %grid;
+    align-items: center;
+  }
+  h4{
+    text-align: center;
+    color: #ffffff;
+  }
+  h3{
+    color: #ffffff;
+    text-align: center;
+  }
+  p{
+    color: #66696C;
+    text-align: center;
+  }
+  .slider-btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin-top: 1rem;
+    font-family: inherit;
+    letter-spacing: 1px;
+  }
+  .slider-btn-div{
+    text-align: center;
+    align-self: start;
+    
+  }
+  .game-slider-dec-one{
+    height: 0.1rem;
+    background-image: linear-gradient(to right, #66696C 20%, #131722 80%);
+    grid-column: 1/-1;
+  }
+  .game-slider-dec-two{
+    height: 0.1rem;
+    margin-top: 1rem;
+    background-image: linear-gradient(to right, #131722 20%, #66696C 80%);
+  }
+}
 .services-article {
   @extend %grid;
   grid-column-gap: 6rem;
@@ -188,15 +238,18 @@ body {
     font-family: inherit;
     letter-spacing: 1px;
   }
-
+  
   .gallery-article & {
     grid-column: 3 / span 1;
   }
 }
 
 .btn:hover {
-  background-color: #ffffff;
-  color: #af9453;
+  //background-color: #ffffff;
+  color: rgb(118, 183, 236);
+}
+.slider-btn:hover{
+  color: rgb(118, 183, 236);
 }
 
 .testimonials-article {

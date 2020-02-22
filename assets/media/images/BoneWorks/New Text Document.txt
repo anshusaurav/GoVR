@@ -1,0 +1,17 @@
+Action
+Adventure
+Simulation
+Indie
+Puzzle
+Realistic
+Singleplayer
+First-Person
+Shooter
+Sandbox
+Violent
+Great Soundtrack
+FPS
+Gore
+Parkour
+Horror
+Sci-fi
