@@ -164,9 +164,9 @@
                   x[(SlideIndex-1)%(x.length)].style.display = "inline-block";
                   x[(SlideIndex)%(x.length)].style.display = "inline-block";
                   x[(SlideIndex+1)%(x.length)].style.display = "inline-block";
-                  x[(SlideIndex-1)%(x.length)].style.display = "1";
-                  x[(SlideIndex)%(x.length)].style.display = "2";
-                  x[(SlideIndex+1)%(x.length)].style.display = "3";
+                  x[(SlideIndex-1)%(x.length)].style.order = "-3";
+                  x[(SlideIndex)%(x.length)].style.order = "-2";
+                  x[(SlideIndex+1)%(x.length)].style.order = "-1";
                 }
     
               </script>
@@ -177,43 +177,76 @@
           </div>
         </div>
       </section>
-
-    <!-- <footer class="footer padding container">
-     
-     
-      <div class="footer-wrapper">
-        
-          <address>
-            <ul>
-              <li>500 Terry Francois</li>
-              <li>Street San Francisco</li>
-              <li>CA 94158</li>
-            </ul>
-          </address>
- 
-          <ul class="contact">
-            <li><a href="#">Tel: 123-456-7890</a></li>
-            <li><a href="#">Fax: 123-456-7890</a></li>
-            <li><a href="mailto:info@masterpplannr.com">info@masterplannr.com</a></li>
-          </ul>
- 
-        <nav class="footer-nav">
-          <ul class="nav-links">
-            <li><a href="https://twitter.com/" target=
-              "blank"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://www.facebook.com/" target=
-              "blank"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="https://www.pinterest.com/" target=
-              "blank"><i class="fab fa-pinterest-p"></i></a></li>
-            <li><a href="https://www.instagram.com/" target=
-              "blank"><i class="fab fa-instagram"></i></a></li>
-          </ul>
-          <a href="contact.html" target="blank"><button class="btn">book a consultation</button></a>
-        </nav>
-        <small>&copy; 2020 Master Plannr</small>
+      <section class="vr-devices-demo padding">
+        <div class="container featured-category-devices">
+          <div class="category-vr-slider">
+            <div class="game-slider-dec-one">
+            </div>
+            <h4>Browse the newest and best devices on GoVR</h4>
+            <div class="slider-vrbtn-div">
+              <button class="slidervr-btn" onclick="plusVR(-1)">❮</button>
+              <button class="slidervr-btn" onclick="plusVR(1)">❯</button>
+              <script>
+                var slideIndexVR = 1;
+                showVR(slideIndexVR);
+    
+                function plusVR(n) {
+                  showVR(slideIndexVR +=n);
+                }
+    
+                function showVR(n)
+                {
+                  var i;
+                  var allVR = document.getElementsByClassName("category-vr");
+                  console.log(allVR.length);
+                  if(n > allVR.length)
+                  {
+                    slideIndexVR=1;
+                  }
+                  if(n < 1)
+                  {
+                    slideIndexVR=allVR.length;
+                  }
+                  for(i=0; i < allVR.length; i++)
+                  {
+                    allVR[i].style.display = "none";
+                  }
+                  allVR[slideIndexVR-1].style.display ="inline-block"
+                }
+    
+              </script>
+              <div class="game-slider-dec-two">
+              </div>
+            </div>
+          </div>
+          <div class="category-vr">
+            <a href="#">
+              <img class="img-res" src="assets/media/images/VR-Devices/htc-vive.png" alt="featured-device-vr">
+            </a>
+            <a href="#">
+              <h3>HTC Vive</h3>
+            </a>
+            <p>PC Winner</p>
+          </div>
+          <div class="category-vr" style="display: none;">
+            <a href="#">
+              <img class="img-res" src="assets/media/images/VR-Devices/valve-index.jpg" alt="featured-device-vr">
+            </a>
+            <a href="#">
+              <h3>Valve Index</h3>
+            </a>
+            <p>The best VR headset</p>
+          </div>
+          
+        </div>
+      </section>
+    <footer class="footer">
+      <div class="footer-wrapper container">
+       
+        <p>&copy; Anshu Saurabh</p>
       </div>
 
-    </footer> -->
+    </footer> 
     <script src="https://kit.fontawesome.com/6648a94d2e.js" crossorigin="anonymous"></script>
   </body>
 </html>
