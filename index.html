@@ -45,10 +45,10 @@
               <img class="img-responsive" src="assets/media/images/hero-gal-1.jpg" alt="Gallery-Img" title="The-Walking-Dead">
             </div> 
             <div class="gal-item">
-              <img class="img-responsive" src="assets/media/images/hero-gal-2.jpg" alt="Gallery-Img" title="Arizona-Sunshine">
+              <img class="img-responsive" src="assets/media/images/hero-gal-2.jpg" alt="Gallery-Img" title="Shadow Legend VR">
             </div> 
             <div class="gal-item">
-              <img class="img-responsive" src="assets/media/images/hero-gal-3.jpg" alt="Gallery-Img" title="Arizona-Sunshine">
+              <img class="img-responsive" src="assets/media/images/hero-gal-3.jpg" alt="Gallery-Img" title="Shadow Legend VR">
             </div> 
             <div class="gal-item">
               <img class="img-responsive" src="assets/media/images/hero-gal-4.jpg" alt="Gallery-Img" title="Half-Life-Alyx">
@@ -148,14 +148,14 @@
                 {
                   var i;
                   var x = document.getElementsByClassName("category-game");
-                  if(n>x.length)
-                  {
-                    SlideIndex=1;
-                  }
-                  if(n<1)
-                  {
-                    SlideIndex=x.length;
-                  }
+                  // if(n>x.length)
+                  // {
+                  //   SlideIndex=1;
+                  // }
+                  // if(n<1)
+                  // {
+                  //   SlideIndex=x.length;
+                  // }
                   for(i=0; i<x.length; i++)
                   {
                     x[i].style.display = "none";
@@ -164,9 +164,9 @@
                   x[(SlideIndex-1)%(x.length)].style.display = "inline-block";
                   x[(SlideIndex)%(x.length)].style.display = "inline-block";
                   x[(SlideIndex+1)%(x.length)].style.display = "inline-block";
-                  // x[(SlideIndex-1)%(x.length)].style.display = "1";
-                  // x[(SlideIndex)%(x.length)].style.display = "2";
-                  // x[(SlideIndex+1)%(x.length)].style.display = "3";
+                  x[(SlideIndex-1)%(x.length)].style.display = "1";
+                  x[(SlideIndex)%(x.length)].style.display = "2";
+                  x[(SlideIndex+1)%(x.length)].style.display = "3";
                 }
     
               </script>

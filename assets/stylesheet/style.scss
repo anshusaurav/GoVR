@@ -20,10 +20,13 @@ body {
   .logo h1 {
     font-family: 'Montserrat', serif;
     color: #21293f;
-    background: -webkit-linear-gradient(rgb(118, 183, 236), #333);  //-webkit-linear-gradient(#373C40, #131722);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-    font-weight: 600;
+    background-image: -webkit-linear-gradient(rgb(118, 183, 236), #333);  //-webkit-linear-gradient(#373C40, #131722);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(rgb(118, 183, 236), #333);  //-webkit-linear-gradient(#373C40, #131722);
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    font-weight: 700;
   }
   .menu-links a {
     @extend %flex;
@@ -163,6 +166,7 @@ body {
   p{
     color: #66696C;
     text-align: center;
+    font-size: 0.8rem;
   }
   .slider-btn {
     cursor: pointer;

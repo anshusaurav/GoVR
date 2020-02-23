@@ -161,7 +161,6 @@ p {
 
 .img-responsive {
   width: 100%;
-  height: 100%;
   font-size: 0;
 }
 
@@ -199,10 +198,13 @@ body {
 .header .logo h1 {
   font-family: "Montserrat", serif;
   color: #21293f;
-  background: -webkit-linear-gradient(#76b7ec, #333);
+  background-image: -webkit-linear-gradient(#76b7ec, #333);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 600;
+  background-image: linear-gradient(#76b7ec, #333);
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  font-weight: 700;
 }
 .header .menu-links a {
   justify-content: space-between;
@@ -332,6 +334,7 @@ body {
 .game-demo p {
   color: #66696C;
   text-align: center;
+  font-size: 0.8rem;
 }
 .game-demo .slider-btn {
   cursor: pointer;
