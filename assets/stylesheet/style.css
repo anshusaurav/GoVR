@@ -87,12 +87,12 @@ img {
   object-fit: cover;
 }
 
-.testimonials-article .testimonials-text, .testimonials-article, .header .side-menu-links label, .header .menu-links a, .header .header-nav, .header .menu-links, .header .side-menu-links {
+.header .side-menu-links label, .header .menu-links a, .header .header-nav, .header .menu-links, .header .side-menu-links {
   display: flex;
   flex-wrap: wrap;
 }
 
-.hidden, .gallery-article, .services-text, .services-article, .vr-devices-demo .category-vr-slider, .vr-devices-demo .featured-category-devices, .game-demo .category-game-slider, .game-demo .featured-category, .hero .small-gallery .gal-item, .hero .small-gallery, .hero .hero-text {
+.game-List-Area .gamegrid-game, .services-text, .services-article, .vr-devices-demo .category-vr-slider, .vr-devices-demo .featured-category-devices, .game-demo .category-game-slider, .game-demo .featured-category, .hero .small-gallery .gal-item, .hero .small-gallery, .hero .hero-text {
   display: grid;
 }
 
@@ -362,6 +362,18 @@ body {
   margin-top: 1rem;
   background-image: linear-gradient(to right, #131722 20%, #66696C 80%);
 }
+@media all and (max-width: 768px) {
+  .game-demo .featured-category {
+    grid-gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+  .game-demo .featured-category .category-game:nth-child(2) {
+    display: none;
+  }
+  .game-demo .featured-category .category-game:nth-child(3) {
+    display: none;
+  }
+}
 
 .vr-devices-demo {
   background-color: #000000;
@@ -465,117 +477,6 @@ body {
   color: #76b7ec;
 }
 
-.testimonials-article {
-  align-content: center;
-  justify-content: space-between;
-  height: 700px;
-}
-@media all and (max-width: 768px) {
-  .testimonials-article {
-    height: 800px;
-  }
-}
-.testimonials-article .testimonials-text {
-  text-align: center;
-  width: 60%;
-  animation: fadeAndScale 0.5s ease-in;
-}
-@keyframes fadeAndScale {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-.testimonials-article .testimonials-text blockquote {
-  line-height: 2.5;
-}
-.testimonials-article .testimonials-text blockquote p {
-  color: #000000;
-  font-weight: 500;
-  letter-spacing: 2px;
-  word-spacing: 5px;
-  font-size: 1.5rem;
-}
-.testimonials-article .testimonials-text .author {
-  font-style: italic;
-  color: #af9453;
-}
-.testimonials-article .btn {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  color: #af9453;
-  font-size: 1.2rem;
-}
-
-.gallery-article {
-  padding: 4rem;
-  background-image: url(../images/gallery);
-  background-attachment: fixed;
-  height: 70vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.hidden {
-  width: 100%;
-  padding: 6rem 0;
-  background: #af9453;
-  display: none;
-  grid-column: 1/span 5;
-}
-.hidden div {
-  place-self: center;
-}
-.hidden h2 {
-  font-size: 2rem;
-  text-transform: uppercase;
-  color: #ffffff;
-  letter-spacing: 0.8rem;
-  padding: 1rem 0;
-}
-.hidden p {
-  line-height: 2;
-  font-size: 1.5rem;
-  color: #ffffff;
-  padding: 1rem 0;
-}
-.hidden .btn {
-  cursor: pointer;
-  background-color: transparent;
-  border: 2px solid #ffffff;
-  color: #ffffff;
-  margin-top: 1rem;
-}
-.hidden .btn:hover {
-  background-color: #ffffff;
-  color: #af9453;
-}
-
-.top {
-  position: fixed;
-  bottom: 5rem;
-  right: 5rem;
-}
-@media all and (max-width: 768px) {
-  .top {
-    bottom: 2rem;
-    right: 1.5rem;
-  }
-}
-.top a {
-  color: #ffffff;
-  font-size: 4rem;
-  height: 60px;
-  width: 60px;
-  padding: 0 20px;
-  border-radius: 50%;
-  border: black;
-  background-color: #3b321b;
-}
-
 .footer {
   background-color: #131722;
 }
@@ -583,6 +484,10 @@ body {
   color: white;
   text-align: center;
   font-size: 0.75rem;
+}
+
+.small-padding {
+  padding: 0.5rem 0;
 }
 
 @media all and (max-width: 768px) {
@@ -644,10 +549,25 @@ body {
   .hidden {
     display: inline-block;
   }
-
-  .footer {
-    padding: 20px 0;
-  }
+}
+.game-List-Area {
+  background-color: #21293f;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 90vh;
+  color: #31030b;
+}
+.game-List-Area .game-List {
+  width: 50%;
+  padding: 0 auto;
+}
+.game-List-Area .gamegrid-game {
+  grid-template-columns: 1fr;
+  border: 2px solid black;
+  grid-gap: 1rem;
+}
+.game-List-Area .gamegrid-game .game {
+  padding: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

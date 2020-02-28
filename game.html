@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/stylesheet/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>GoVR</title>
+    
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header-nav container">
+
+        <a class="logo" href="index.html"><h1>GoVR</h1></a>
+        <label class ="ham-menu ham" for="toggle">&#9776;</label>
+        <input class="ham-menu" id="toggle" type="checkbox">
+
+        <ul class="menu-links">
+          <li><a href="#">Browse  <span class="menu-support">&#8964;</span></a></li>
+          <li><a href="index.html">Home  <span class="menu-support">&#8964;</span></a></li>
+          <li><a href="#">VR Devices  <span class="menu-support">&#8964;</span></a></li>
+          <li><a href="game.html">VR Games  <span class="menu-support">&#8964;</span></a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+
+        <!-- &#128270 search-button-->
+        <!-- <ul class="side-menu-links">
+          <li><label href="#">Search</label></li> 
+          <li><label href="#">Upload</label></li>
+          <li><label href="#">User</label></li>
+        </ul> -->
+      </nav>
+    </header>
+    <section class="gamefilter-sort-area padding">
+      <div class="container gamefilter-sort">
+        <div class="game-misc">
+          <a href="#" class="utility-button" role="button" onclick="sortAlphabetical();">Sort Alphabetical</a>
+          <a href="#" class="utility-button" role="button" onclick="filterByDeveloper('Steam');">Filter Steam Games</a>
+          <a href="#" class="utility-button" role="button" onclick="filterByDeveloper('Epic-Games');">Filter Steam Games</a>
+          <a href="#" class="utility-button" role="button" onclick="filterByDevice('HTC-Vive');">Filter HTC-Vive Games</a>
+          <a href="#" class="utility-button" role="button" onclick="filterByDevice('Valve-Index');">Filter Valve-Index Games</a>
+        
+        </div>
+      </div>
+  </section>
+
+    <section class="game-List-Area padding">
+        <div class="container game-List">
+          <div class="gamegrid-game">
+          </div>
+        </div>
+    </section>
+    <footer class="footer small-padding">
+      <div class="footer-wrapper container">
+       
+        <p>&copy; Anshu Saurabh</p>
+      </div>
+    </footer> 
+    <script>
+      const games = [
+        {
+          name : "Pavlov",
+          genre:["Action", "Adventure","Simulation", "FPS"],
+          developer: "Epic-Games",
+          devicesCompatible: ["HTC-Vive"],
+        },
+        {
+          name : "Shadow-Legend",
+          genre:["Action", "Adventure","Simulation", "Indie"],
+          developer: "Steam",
+          devicesCompatible: ["Valve-Index"],
+        },
+        {
+          name : "The-Walking-Dead",
+          genre:["Action", "Adventure","Simulation", "FPS"],
+          developer: "Epic-Games",
+          devicesCompatible: ["HTC-Vive"],
+        },
+        {
+          name : "BoneWorks",
+          genre:["Action", "Adventure","Simulation", "Indie"],
+          developer: "Steam",
+          devicesCompatible: ["HTC-Vive", "Valve-Index"],
+        },
+        {
+          name : "Counter-Fight",
+          genre:["Arcade", "Adventure","Simulation", "Indie"],
+          developer: "Steam",
+          devicesCompatible: ["Valve-Index"],
+        },
+        {
+          name : "Master-Bladesmith",
+          genre:["RPG", "Adventure", "Indie"],
+          developer: "Steam",
+          devicesCompatible: ["HTC-Vive", "Valve-Index"],
+        },
+      ];
+       
+      var compGrid = document.getElementsByClassName("gamegrid-game");
+      //var newDiv = document.createElement("div");
+      function generateHTML(gameList)
+      {
+        gameList.forEach(elem =>{
+          var newDiv = document.createElement("div");
+          //return games.reduce()
+          var s = `<div class="game">
+            <h2>${elem.name}</h2>
+            <p>${elem.genre.reduce((acc, gen, index, arr)=>{
+              acc += gen;
+              if(index != arr.length-1)
+                acc+=", ";
+              return acc;
+            },"")}</p>
+            <h3>Developer: ${elem.developer}
+              </h3>
+            <h3>Devices Supported: ${elem.devicesCompatible.reduce((acc, device, index, arr)=>{
+              acc += device;
+              if(index != arr.length-1)
+                acc+=", ";
+              return acc;
+            },"")}</h3>
+            </div>`; 
+          newDiv.innerHTML = s;
+          compGrid[0].appendChild(newDiv);
+        });
+      }
+      generateHTML(games);
+      function sortAlphabetical()
+      {
+        compGrid[0].innerHTML = '';
+        console.log(compGrid[0].childElementCount);
+        var gamesClone = [...games];
+        console.log(gamesClone);
+        gamesClone.sort((a,b) => a.name.localeCompare(b.name));
+        console.log(gamesClone);
+        generateHTML(gamesClone);
+      }      
+      function filterByDeveloper(str)
+      {
+        compGrid[0].innerHTML = '';
+        var arr = games.reduce((acc, elem)=>{
+          if(elem.developer.includes(str))
+            acc.push(elem);
+          //console.log(elem.developer);
+          return acc;
+        },[]);
+        console.log(arr);
+        generateHTML(arr);
+      }
+      function filterByGenre(str) {
+
+      }
+      function filterByDevice(str)
+      {
+        compGrid[0].innerHTML = '';
+        var arr = games.reduce((acc, elem)=>{
+          if(elem.devicesCompatible.join(' ').includes(str))
+            acc.push(elem);
+          //console.log(elem.developer);
+          return acc;
+        },[]);
+        console.log(arr);
+        generateHTML(arr);
+      }
+      function filterByGenre(str) {
+
+      }
+    </script>
+  </body>
+</html>
