@@ -48,21 +48,60 @@
               <a href="#" class="utility-button" role="button" onclick="sortAcending();">Sort Low to High(0-5)</a>
               <a href="#" class="utility-button" role="button" onclick="sortDescending();">Sort High to Low(5-0)</a>
     
-              
-              <!-- <a href="#" class="utility-button" role="button" onclick="filterByDeveloper('Steam');">Filter Steam Games</a>
-              <a href="#" class="utility-button" role="button" onclick="filterByDeveloper('Epic-Games');">Filter Steam Games</a>
-              <a href="#" class="utility-button" role="button" onclick="filterByDevice('HTC-Vive');">Filter HTC-Vive Games</a>
-              <a href="#" class="utility-button" role="button" onclick="filterByDevice('Valve-Index');">Filter Valve-Index Games</a> -->
-              </div>
+            </div>
           </div>
         </div>
         <div class="container game-List">
           <div class="gameMain-gameArea">
-            <div class="filter-area">
-              <div class="filter-added">
-
+            <div class="gamefilter-area">
+              <div class="gamefilter-applied">
+                <div class = "gamefilterapplied-header">
+                  <h3>Filter  <span>Y</span></h3>
+                  <a href="#" class="utility-button reset-button" role="button" onclick="reset();">Reset</a>
+                
+                  </div>
+                <div class="gamefilteradded"> 
+                  
+                </div>
+              </div>  
+              <div class ="filtergame-list">
+                <h4>Developer</h4>
+                <div>
+                  <a href="#" class="utility-button" role="button" onclick="filterByDeveloper('Steam');">Steam Labs</a>
+                </div>
+                <div>
+                  <a href="#" class="utility-button" role="button" onclick="filterByDeveloper('Epic-Games');">Epic Games</a>
+                </div>
+                <h4>Devices</h4>
+                <div>
+                  <a href="#" class="utility-button" role="button" onclick="filterByDevice('HTC-Vive');">HTC-Vive</a>
+                </div>
+                <div>
+                  <a href="#" class="utility-button" role="button" onclick="filterByDevice('Valve-Index');">Valve-Index</a>
+                </div>
+                <h4>Genre</h4>
+                <div>
+                  <a href="#" class="utility-button" role="button" onclick="filterByGenre('Action');">Action</a>
+                </div>
+                <div>
+                  <a href="#" class="utility-button" role="button" onclick="filterByGenre('Adventure');">Adventure</a>
+                </div>
+                <div>
+                  <a href="#" class="utility-button" role="button" onclick="filterByGenre('Indie');">Indie</a>
+                </div>
+                <div>
+                  <a href="#" class="utility-button" role="button" onclick="filterByGenre('Simulation');">Simulation</a>
+                </div>
+                <div>
+                  <a href="#" class="utility-button" role="button" onclick="filterByGenre('FPS');">FPS</a>
+                </div>
+                <div>
+                  <a href="#" class="utility-button" role="button" onclick="filterByGenre('RPG');">RPG</a>
+                </div>
+                <div>
+                <a href="#" class="utility-button reset-button" role="button" onclick="reset();">Reset</a>
+                </div>
               </div>
-
             </div>
             <div class="gamegrid-game">
             </div>
@@ -72,7 +111,6 @@
     </section>
     <footer class="footer small-padding">
       <div class="footer-wrapper container">
-       
         <p>&copy; Anshu Saurabh</p>
       </div>
     </footer> 
@@ -137,7 +175,7 @@
             </div>
             <div>
             <h2>${elem.name}</h2>
-            <p>${elem.genre.reduce((acc, gen, index, arr)=>{
+            <p>Genre: ${elem.genre.reduce((acc, gen, index, arr)=>{
               acc += gen;
               if(index != arr.length-1)
                 acc+=", ";
@@ -192,7 +230,15 @@
         generateHTML(arr);
       }
       function filterByGenre(str) {
-
+        compGrid[0].innerHTML = '';
+        var arr = games.reduce((acc, elem)=>{
+          if(elem.genre.join(' ').includes(str))
+            acc.push(elem);
+          //console.log(elem.developer);
+          return acc;
+        },[]);
+        console.log(arr);
+        generateHTML(arr);
       }
       function filterByDevice(str)
       {
@@ -206,6 +252,7 @@
         console.log(arr);
         generateHTML(arr);
       }
+
       function sortAcending()
       {
         compGrid[0].innerHTML = '';
@@ -226,6 +273,10 @@
         gamesClone.sort((a,b) => b.ratings- a.ratings);
         console.log(gamesClone);
         generateHTML(gamesClone);
+      }
+      function reset() {
+        compGrid[0].innerHTML = '';
+        generateHTML(games);
       }
     </script>
   </body>
