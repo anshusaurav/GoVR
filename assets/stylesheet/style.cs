@@ -92,7 +92,7 @@ img {
   flex-wrap: wrap;
 }
 
-.gamefilter-sort, .game-List-Area .game .game-img-res, .game-List-Area .game, .game-List-Area .gamegrid-game, .game-List-Area .gameMain-gameArea, .services-text, .services-article, .vr-devices-demo .category-vr-slider, .vr-devices-demo .featured-category-devices, .game-demo .category-game-slider, .game-demo .featured-category, .hero .small-gallery .gal-item, .hero .small-gallery, .hero .hero-text {
+.game-List-Area .gamegrid-game, .services-text, .services-article, .vr-devices-demo .category-vr-slider, .vr-devices-demo .featured-category-devices, .game-demo .category-game-slider, .game-demo .featured-category, .hero .small-gallery .gal-item, .hero .small-gallery, .hero .hero-text {
   display: grid;
 }
 
@@ -186,7 +186,6 @@ body {
 
 .header {
   padding: 1rem 0;
-  background-color: #66696C;
 }
 .header .header-nav, .header .menu-links, .header .side-menu-links {
   justify-content: space-between;
@@ -556,61 +555,19 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 90vh;
+  color: #31030b;
 }
 .game-List-Area .game-List {
-  width: 70%;
+  width: 50%;
   padding: 0 auto;
-}
-.game-List-Area .gameMain-gameArea {
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 1rem;
-}
-.game-List-Area .filter-area {
-  background-color: white;
 }
 .game-List-Area .gamegrid-game {
   grid-template-columns: 1fr;
+  border: 2px solid black;
   grid-gap: 1rem;
 }
 .game-List-Area .gamegrid-game .game {
   padding: 1rem;
 }
-.game-List-Area .game {
-  background-color: #131722;
-  grid-gap: 1rem;
-  grid-template-columns: 1fr 1fr;
-}
-.game-List-Area .game .game-img-res {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  justify-content: center;
-}
-.game-List-Area .game h2 {
-  margin-top: 0.2rem;
-  color: white;
-  font-weight: 500;
-}
-.game-List-Area .game p {
-  font-size: 0.8rem;
-  color: white;
-}
 
-.gamefilter-sort {
-  width: 70%;
-  margin-bottom: 1rem;
-  grid-template-columns: 1fr 2fr;
-}
-.gamefilter-sort a {
-  background-color: #76b7ec;
-  color: white;
-  border: 1px solid black;
-  padding: 0.3rem;
-  font-size: 0.8rem;
-  font-weight: 450;
-}
-.gamefilter-sort a:hover {
-  background-color: #3079b4;
-}
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.cs.map */

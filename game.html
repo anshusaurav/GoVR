@@ -34,23 +34,40 @@
         </ul> -->
       </nav>
     </header>
-    <section class="gamefilter-sort-area padding">
-      <div class="container gamefilter-sort">
-        <div class="game-misc">
-          <a href="#" class="utility-button" role="button" onclick="sortAlphabetical();">Sort Alphabetical</a>
-          <a href="#" class="utility-button" role="button" onclick="filterByDeveloper('Steam');">Filter Steam Games</a>
-          <a href="#" class="utility-button" role="button" onclick="filterByDeveloper('Epic-Games');">Filter Steam Games</a>
-          <a href="#" class="utility-button" role="button" onclick="filterByDevice('HTC-Vive');">Filter HTC-Vive Games</a>
-          <a href="#" class="utility-button" role="button" onclick="filterByDevice('Valve-Index');">Filter Valve-Index Games</a>
-        
-        </div>
-      </div>
-  </section>
+    
 
     <section class="game-List-Area padding">
-        <div class="container game-List">
-          <div class="gamegrid-game">
+        <div class="gamesort-sortlist container">
+          <div class="container gamefilter-sort">
+            <div class="empty">
+    
+            </div>
+            <div class="game-misc">
+              <a href="#" class="utility-button" role="button" onclick="sortAlphabetical();">Sort Alphabetical(A-Z)</a>
+              <a href="#" class="utility-button" role="button" onclick="sortRevAlphabetical();">Sort Alphabetical(Z-A)</a>
+              <a href="#" class="utility-button" role="button" onclick="sortAcending();">Sort Low to High(0-5)</a>
+              <a href="#" class="utility-button" role="button" onclick="sortDescending();">Sort High to Low(5-0)</a>
+    
+              
+              <!-- <a href="#" class="utility-button" role="button" onclick="filterByDeveloper('Steam');">Filter Steam Games</a>
+              <a href="#" class="utility-button" role="button" onclick="filterByDeveloper('Epic-Games');">Filter Steam Games</a>
+              <a href="#" class="utility-button" role="button" onclick="filterByDevice('HTC-Vive');">Filter HTC-Vive Games</a>
+              <a href="#" class="utility-button" role="button" onclick="filterByDevice('Valve-Index');">Filter Valve-Index Games</a> -->
+              </div>
           </div>
+        </div>
+        <div class="container game-List">
+          <div class="gameMain-gameArea">
+            <div class="filter-area">
+              <div class="filter-added">
+
+              </div>
+
+            </div>
+            <div class="gamegrid-game">
+            </div>
+          </div>
+          
         </div>
     </section>
     <footer class="footer small-padding">
@@ -66,36 +83,43 @@
           genre:["Action", "Adventure","Simulation", "FPS"],
           developer: "Epic-Games",
           devicesCompatible: ["HTC-Vive"],
+          ratings: 4.6,
         },
         {
           name : "Shadow-Legend",
           genre:["Action", "Adventure","Simulation", "Indie"],
           developer: "Steam",
           devicesCompatible: ["Valve-Index"],
+          ratings: 4.2,
         },
         {
           name : "The-Walking-Dead",
           genre:["Action", "Adventure","Simulation", "FPS"],
           developer: "Epic-Games",
           devicesCompatible: ["HTC-Vive"],
+          ratings: 4.8,
         },
         {
           name : "BoneWorks",
           genre:["Action", "Adventure","Simulation", "Indie"],
           developer: "Steam",
           devicesCompatible: ["HTC-Vive", "Valve-Index"],
+          ratings: 4.1,
         },
         {
           name : "Counter-Fight",
           genre:["Arcade", "Adventure","Simulation", "Indie"],
           developer: "Steam",
           devicesCompatible: ["Valve-Index"],
+          ratings: 3.6,
         },
         {
           name : "Master-Bladesmith",
           genre:["RPG", "Adventure", "Indie"],
           developer: "Steam",
           devicesCompatible: ["HTC-Vive", "Valve-Index"],
+          ratings: 3.4,
+
         },
       ];
        
@@ -107,6 +131,11 @@
           var newDiv = document.createElement("div");
           //return games.reduce()
           var s = `<div class="game">
+            <div>
+
+            <image class="game-img-res" src="assets/media/images/${elem.name}/header.jpg">
+            </div>
+            <div>
             <h2>${elem.name}</h2>
             <p>${elem.genre.reduce((acc, gen, index, arr)=>{
               acc += gen;
@@ -114,14 +143,16 @@
                 acc+=", ";
               return acc;
             },"")}</p>
-            <h3>Developer: ${elem.developer}
-              </h3>
-            <h3>Devices Supported: ${elem.devicesCompatible.reduce((acc, device, index, arr)=>{
+            <p>Developer: ${elem.developer}
+              </p>
+            <p>Devices Supported: ${elem.devicesCompatible.reduce((acc, device, index, arr)=>{
               acc += device;
               if(index != arr.length-1)
                 acc+=", ";
               return acc;
-            },"")}</h3>
+            },"")} </p>
+            <p>Rating: ${elem.ratings}/5.0</p> 
+            </div>
             </div>`; 
           newDiv.innerHTML = s;
           compGrid[0].appendChild(newDiv);
@@ -138,6 +169,16 @@
         console.log(gamesClone);
         generateHTML(gamesClone);
       }      
+      function sortRevAlphabetical()
+      {
+        compGrid[0].innerHTML = '';
+        console.log(compGrid[0].childElementCount);
+        var gamesClone = [...games];
+        console.log(gamesClone);
+        gamesClone.sort((a,b) => b.name.localeCompare(a.name));
+        console.log(gamesClone);
+        generateHTML(gamesClone);
+      }   
       function filterByDeveloper(str)
       {
         compGrid[0].innerHTML = '';
@@ -165,8 +206,26 @@
         console.log(arr);
         generateHTML(arr);
       }
-      function filterByGenre(str) {
+      function sortAcending()
+      {
+        compGrid[0].innerHTML = '';
+        console.log(compGrid[0].childElementCount);
+        var gamesClone = [...games];
+        console.log(gamesClone);
+        gamesClone.sort((a,b) => a.ratings -b.ratings);
+        console.log(gamesClone);
+        generateHTML(gamesClone);
+      }
 
+      function sortDescending()
+      {
+        compGrid[0].innerHTML = '';
+        console.log(compGrid[0].childElementCount);
+        var gamesClone = [...games];
+        console.log(gamesClone);
+        gamesClone.sort((a,b) => b.ratings- a.ratings);
+        console.log(gamesClone);
+        generateHTML(gamesClone);
       }
     </script>
   </body>
